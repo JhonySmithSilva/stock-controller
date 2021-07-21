@@ -23,6 +23,6 @@ public class StockController {
     
     @GetMapping
     public String getBook(){
-        return "testando a API! ";
+        return "API test! ";
     }
 }
