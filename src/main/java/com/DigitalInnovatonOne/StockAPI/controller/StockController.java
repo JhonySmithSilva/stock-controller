@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author jony_
  */
 @RestController
-@RequestMapping("/api/v1/stock")
+@RequestMapping("/stock")
 public class StockController {
     
     @GetMapping
