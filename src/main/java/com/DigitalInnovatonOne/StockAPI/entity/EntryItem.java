@@ -7,7 +7,7 @@ and has the main objective of being used as a portfolio in future opportunities,
 and applying the knowledge acquired throughout the course.    
 
  */
-package com.DigitalInnovatonOne.StockAPI.enums;
+package com.DigitalInnovatonOne.StockAPI.entity;
 
 /**
  *

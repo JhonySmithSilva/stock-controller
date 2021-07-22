@@ -9,10 +9,21 @@ and applying the knowledge acquired throughout the course.
  */
 package com.DigitalInnovatonOne.StockAPI.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  *
  * @author jony_
  */
-public class Category {
+@Getter
+@AllArgsConstructor
+public enum Category {      
+    
+    CLOTHERS("clothrers"),
+    SHOES("shoes"),
+    ELETRONICS("eletronic");
+    
+    private final String description; 
     
 }

@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @author jony_
  */
 @RestController
-@RequestMapping("/api/v1/stock")
+@RequestMapping("api/v1/stock")
 public class StockController {
     
     @GetMapping
     public String getBook(){
-        return "testando a API! ";
+        return "API test! ";
     }
 }
