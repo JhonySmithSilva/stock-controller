@@ -9,6 +9,8 @@ and applying the knowledge acquired throughout the course.
  */
 package com.DigitalInnovatonOne.StockAPI.entity;
 
+import com.DigitalInnovatonOne.StockAPI.enums.Category;
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -30,16 +32,17 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class Product implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    
     @Column(nullable = false)
-    private String name;
+    private String nameOfProduct;
+    
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String category;
-    
+    private Category category;   
     
 }
