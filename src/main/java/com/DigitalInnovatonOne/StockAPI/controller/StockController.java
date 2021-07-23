@@ -9,7 +9,13 @@ and applying the knowledge acquired throughout the course.
  */
 package com.DigitalInnovatonOne.StockAPI.controller;
 
+import com.DigitalInnovatonOne.StockAPI.dto.response.MessageResponseDTO;
+import com.DigitalInnovatonOne.StockAPI.entity.Product;
+import com.DigitalInnovatonOne.StockAPI.repository.StockRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,8 +27,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/v1/stock")
 public class StockController {
     
-    @GetMapping
-    public String getBook(){
-        return "API test! ";
+    private StockRepository stockRepository;
+
+    @Autowired
+    public StockController(StockRepository personRepository) {
+        this.stockRepository = stockRepository;
+    }    
+    
+    @PostMapping
+    public MessageResponseDTO createProduct(@RequestBody Product product){
+        Product savedProduct = stockRepository.save(product);
+        return MessageResponseDTO
+                .builder()
+                .message("created product ID " + savedProduct.getId())
+                .build();
     }
 }

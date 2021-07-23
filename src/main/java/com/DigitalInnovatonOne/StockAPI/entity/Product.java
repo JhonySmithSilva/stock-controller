@@ -32,11 +32,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product implements Serializable {
+public class Product {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     
     @Column(nullable = false)
     private String nameOfProduct;
